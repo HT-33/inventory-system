@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/Katrina/Downloads/inventory_system_15.html -->
+<!-- saved from url=(0059)file:///C:/Users/Katrina/Downloads/inventory_system_18.html -->
 <html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1289,7 +1289,9 @@
   <div class="tmenu-item" onclick="toggleTMenu(this);renderWindowMenu()" onmouseenter="renderWindowMenu()">
     <span class="tmenu-key">視</span>窗(W)
     <div class="tmenu-dropdown" id="window-menu-dropdown" style="min-width:220px">
-      <div id="window-menu-list"><div style="padding:8px 14px;color:var(--text3);font-size:11px">尚未開啟任何頁面</div></div>
+      <div id="window-menu-list">
+        <div class="tmd-item" style="color:var(--text3);font-size:11px;pointer-events:none">尚未開啟任何頁面</div>
+      </div>
       <div class="tmd-sep"></div>
       <div class="tmd-item" onclick="event.stopPropagation();clearWindowHistory();closeTMenus()" style="color:var(--danger);font-size:12px">🗑 清除歷史</div>
     </div>
@@ -1392,11 +1394,6 @@
     <div class="bar-wrap">
       <div class="bar-val"></div>
       <div class="bar" style="height:0%;background:var(--border)"></div>
-      <div class="bar-label">4/3</div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-val"></div>
-      <div class="bar" style="height:0%;background:var(--border)"></div>
       <div class="bar-label">4/4</div>
     </div>
     <div class="bar-wrap">
@@ -1423,6 +1420,11 @@
       <div class="bar-val"></div>
       <div class="bar" style="height:0%;background:var(--border)"></div>
       <div class="bar-label">4/9</div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-val"></div>
+      <div class="bar" style="height:0%;background:var(--border)"></div>
+      <div class="bar-label">4/10</div>
     </div></div>
       </div>
       <div class="chart-card">
@@ -1975,7 +1977,7 @@
         </div>
         <div class="of-row">
           <span class="of-label">業務人員</span>
-          <div class="of-field"><input type="text" class="of-input" id="cust-salesperson" placeholder="業務姓名"></div>
+          <div class="of-field"><input type="text" class="of-input" id="cust-salesperson" placeholder="業務姓名" list="cust-salesperson-list" autocomplete="off"><datalist id="cust-salesperson-list"></datalist></div>
         </div>
         <div class="of-row">
           <span class="of-label">失效</span>
@@ -3463,11 +3465,11 @@
             </div>
 
             <div class="of-row">
-              <span class="of-label">請購人 <a href="file:///C:/Users/Katrina/Downloads/inventory_system_15.html#" onclick="event.preventDefault();showPage(&#39;employees&#39;)" style="font-size:10px;color:var(--accent);text-decoration:none">⚙</a></span>
+              <span class="of-label">請購人 <a href="file:///C:/Users/Katrina/Downloads/inventory_system_18.html#" onclick="event.preventDefault();showPage(&#39;employees&#39;)" style="font-size:10px;color:var(--accent);text-decoration:none">⚙</a></span>
               <div class="of-field" style="flex:1"><input type="text" class="of-input" id="pod-buyer-id" placeholder="工號" list="pod-buyer-id-list" autocomplete="off" onchange="onPODBuyerIdChange()" oninput="this.style.background=&#39;var(--surface)&#39;"><datalist id="pod-buyer-id-list"></datalist></div>
               <span class="of-label">姓名</span>
               <div class="of-field" style="flex:1.5"><input type="text" class="of-input" id="pod-buyer" placeholder="姓名" list="pod-buyer-list" autocomplete="off" onchange="onPODBuyerChange()" oninput="this.style.background=&#39;var(--surface)&#39;" readonly=""><datalist id="pod-buyer-list"></datalist></div>
-              <span class="of-label">部門 <a href="file:///C:/Users/Katrina/Downloads/inventory_system_15.html#" onclick="event.preventDefault();showPage(&#39;departments&#39;)" style="font-size:10px;color:var(--accent);text-decoration:none">⚙</a></span>
+              <span class="of-label">部門 <a href="file:///C:/Users/Katrina/Downloads/inventory_system_18.html#" onclick="event.preventDefault();showPage(&#39;departments&#39;)" style="font-size:10px;color:var(--accent);text-decoration:none">⚙</a></span>
               <div class="of-field" style="flex:1.5"><input type="text" class="of-input" id="pod-dept" placeholder="部門" list="pod-dept-list" autocomplete="off"><datalist id="pod-dept-list"></datalist></div>
             </div>
             <div class="of-row">
@@ -3596,14 +3598,14 @@
               <span class="of-label">日期</span>
               <div class="of-field" style="flex:1.2"><input class="of-input" type="date" id="sos-date"></div>
               <span class="of-label">請款客戶</span>
-              <div class="of-field" style="flex:1.5"><select class="of-select" id="sos-bill-cust" style="width:100%"><option value="">選擇客戶</option></select></div>
+              <div class="of-field" style="flex:1.5"><input class="of-input" type="text" id="sos-bill-cust" placeholder="請款客戶" list="sos-bill-list" autocomplete="off"><datalist id="sos-bill-list"></datalist></div>
               <span class="of-label">部門</span>
               <div class="of-field" style="flex:1"><input class="of-input" type="text" id="sos-dept" placeholder="部門"></div>
               <div class="of-field" style="flex:1"></div>
             </div>
             <div class="of-row">
               <span class="of-label">客戶</span>
-              <div class="of-field" style="flex:1.5"><select class="of-select" id="sos-cust" style="width:100%" onchange="onSOSCustChange()"><option value="">選擇客戶</option></select></div>
+              <div class="of-field" style="flex:1.5"><input class="of-input" type="text" id="sos-cust" placeholder="客戶代號或名稱" list="sos-cust-list" autocomplete="off" oninput="onSOSCustInput()"><datalist id="sos-cust-list"></datalist></div>
               <span class="of-label">幣別</span>
               <div class="of-field" style="flex:0.7"><select class="of-select" id="sos-currency" style="width:100%" onchange="calcSOSTotals()"><option value="TWD">TWD</option><option value="USD">USD</option><option value="CNY">CNY</option><option value="JPY">JPY</option><option value="EUR">EUR</option></select></div>
               <span class="of-label">匯率</span>
@@ -3617,7 +3619,7 @@
             </div>
             <div class="of-row">
               <span class="of-label">業務員</span>
-              <div class="of-field" style="flex:1.5"><input class="of-input" type="text" id="sos-salesman" placeholder="業務員"></div>
+              <div class="of-field" style="flex:1.5"><input class="of-input" type="text" id="sos-salesman" placeholder="業務員" list="sos-salesman-list" autocomplete="off"><datalist id="sos-salesman-list"></datalist></div>
               <span class="of-label">聯絡人</span>
               <div class="of-field" style="flex:1.2"><input class="of-input" type="text" id="sos-contact" placeholder="聯絡人"></div>
               <span class="of-label">電話</span>
@@ -5409,21 +5411,21 @@
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px">
         <div class="form-group">
           <label>請購人
-            <a href="file:///C:/Users/Katrina/Downloads/inventory_system_15.html#" onclick="event.preventDefault();showPage(&#39;employees&#39;)" style="font-size:10px;color:var(--accent);margin-left:6px;text-decoration:none">⚙ 維護</a>
+            <a href="file:///C:/Users/Katrina/Downloads/inventory_system_18.html#" onclick="event.preventDefault();showPage(&#39;employees&#39;)" style="font-size:10px;color:var(--accent);margin-left:6px;text-decoration:none">⚙ 維護</a>
           </label>
           <input type="text" id="req-requester" placeholder="姓名" list="req-requester-list" autocomplete="off" onchange="onReqRequesterChange()">
           <datalist id="req-requester-list"></datalist>
         </div>
         <div class="form-group">
           <label>部門
-            <a href="file:///C:/Users/Katrina/Downloads/inventory_system_15.html#" onclick="event.preventDefault();showPage(&#39;departments&#39;)" style="font-size:10px;color:var(--accent);margin-left:6px;text-decoration:none">⚙ 維護</a>
+            <a href="file:///C:/Users/Katrina/Downloads/inventory_system_18.html#" onclick="event.preventDefault();showPage(&#39;departments&#39;)" style="font-size:10px;color:var(--accent);margin-left:6px;text-decoration:none">⚙ 維護</a>
           </label>
           <input type="text" id="req-dept" placeholder="部門名稱" list="req-dept-list" autocomplete="off">
           <datalist id="req-dept-list"></datalist>
         </div>
         <div class="form-group">
           <label>專案
-            <a href="file:///C:/Users/Katrina/Downloads/inventory_system_15.html#" onclick="event.preventDefault();showPage(&#39;projects&#39;)" style="font-size:10px;color:var(--accent);margin-left:6px;text-decoration:none">⚙ 維護</a>
+            <a href="file:///C:/Users/Katrina/Downloads/inventory_system_18.html#" onclick="event.preventDefault();showPage(&#39;projects&#39;)" style="font-size:10px;color:var(--accent);margin-left:6px;text-decoration:none">⚙ 維護</a>
           </label>
           <input type="text" id="req-project" placeholder="專案名稱（選填）" list="req-project-list" autocomplete="off">
           <datalist id="req-project-list"></datalist>
@@ -5931,9 +5933,6 @@
         </div>
         <div style="display:flex;gap:8px;margin-top:10px">
           <button class="btn btn-primary" onclick="runReport()">🔍 查詢</button>
-          <button class="btn btn-ghost" onclick="clearReportConditions()">清除條件</button>
-        </div>
- 
 <script>
 // ===== DATA LAYER =====
 const DB = {
@@ -6113,7 +6112,7 @@ function showPage(name) {
       switchPODTab('browse', document.querySelector('#page-po-draft .order-tab:last-child'));
     }
   }
-  if (name === 'sales-order')  renderSOList();
+  if (name === 'sales-order') { renderSOList(); if (!currentSOId) newOrder(); initSOSDataLists(); }
   if (name === 'sales-return') renderSRList();
   if (name === 'sales-invoice') renderSIList();
 }
@@ -7492,8 +7491,19 @@ function openReqModal(id) {
     (document.getElementById('req-note')||{}).value = r.note || '';
     r.items.forEach(item => addReqItem(item));
   } else {
-    var _reqCodes=(DBExtra.reqs||[]).map(function(r){return r.code;});
-    (document.getElementById('req-code')||{})['value']=genDocCode('PB',_reqCodes);
+    var _now=new Date();
+    var _mm=String(_now.getMonth()+1).padStart(2,'0');
+    var _dd=String(_now.getDate()).padStart(2,'0');
+    var _reqY=String(_now.getFullYear());var _reqBase='PB'+_reqY+_mm+_dd;
+    var _reqCodes=(DBExtra.reqs||[]).map(function(r){return r.code||'';});
+    var _reqMax=0;
+    _reqCodes.forEach(function(code){
+      if(code.startsWith(_reqBase)){
+        var seq=parseInt(code.slice(_reqBase.length))||0;
+        if(seq>_reqMax)_reqMax=seq;
+      }
+    });
+    (document.getElementById('req-code')||{})['value']=_reqBase+String(_reqMax+1).padStart(4,'0');
     (document.getElementById('req-date')||{}).value = today();
     (document.getElementById('req-requester')||{}).value = '';
     (document.getElementById('req-dept')||{}).value = '';
@@ -9439,6 +9449,16 @@ var CUST_FIELDS = ['code','shortname','taxid','name','billing','open-date','type
   'invoice-addr','biz-addr','delivery-addr','note','payterm','currency','credit','tax-type','salesperson',
   'bank-name','bank-code','bank-branch','bank-account-name','bank-account','bank-swift','bank-note'];
 
+
+function initCustDataLists() {
+  var emps = DBExtra.employees||[];
+  var dl = document.getElementById('cust-salesperson-list');
+  if (dl) {
+    dl.innerHTML = emps.map(function(e){
+      return '<option value="'+( e.name||'')+'">'+(e.empId||e.code||'')+'</option>';
+    }).join('');
+  }
+}
 function switchCustomerTab(tab, btn) {
   ['basic','trade','card','browse'].forEach(function(t){
     var el = document.getElementById('cust-tab-'+t);
@@ -9447,6 +9467,8 @@ function switchCustomerTab(tab, btn) {
   document.querySelectorAll('#page-customers .order-tab').forEach(function(b){ b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
   if (tab === 'browse') renderCustomerList();
+  if (tab === 'trade') initCustDataLists();
+  if (tab === 'basic') initCustDataLists();
 }
 
 function getCustomerFields() {
@@ -9645,14 +9667,7 @@ function setOrderFilter(f, btn) {
   renderOrders();
 }
 
-function initSOForm() {
-  // Fill customer select
-  const sel = document.getElementById('so-customer');
-  if (sel) {
-    sel.innerHTML = '<option value="">請選擇客戶</option>' +
-      DBExtra.customers.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
-  }
-}
+function initSOForm() { initSOSDataLists(); }
 
 function newOrder() {
   initSOForm();
@@ -9660,7 +9675,19 @@ function newOrder() {
   soItemCount = 0;
   _soEditing = true;
   const g = id => document.getElementById(id);
-  g('so-code').value = 'SO-' + Date.now().toString().slice(-6);
+  var _soNow=new Date();
+  var _soMm=String(_soNow.getMonth()+1).padStart(2,'0');
+  var _soDd=String(_soNow.getDate()).padStart(2,'0');
+  var _soY=String(_soNow.getFullYear());var _soBase='OO'+_soY+_soMm+_soDd;
+  var _soCodes=(DBExtra.salesOrders||[]).map(function(o){return o.code||'';});
+  var _soMax=0;
+  _soCodes.forEach(function(code){
+    if(code.startsWith(_soBase)){
+      var seq=parseInt(code.slice(_soBase.length))||0;
+      if(seq>_soMax)_soMax=seq;
+    }
+  });
+  g('so-code').value=_soBase+String(_soMax+1).padStart(4,'0');
   g('so-date').value = today();
   g('so-nature').value = '';
   g('so-customer').value = '';
@@ -11010,112 +11037,124 @@ function cancelPODEdit() {
 
 function printCurrentPOD() {
   if (!currentPODId) { showToast('請先選取一筆採購底稿'); return; }
-  const draft = (DBExtra.poDrafts||[]).find(function(d){ return d.id===currentPODId; });
+  var draft = (DBExtra.poDrafts||[]).find(function(d){ return d.id===currentPODId; });
   if (!draft) { showToast('找不到底稿資料'); return; }
-  const s = getSettings();
-  var set = function(id, val) { var el=document.getElementById(id); if(el) el.value=val||''; };
-  set('pod-print-company-name', s.companyName||'瀚騰科技股份有限公司');
-  set('pod-print-taxid',        s.companyTaxId||'25120468');
-  set('pod-print-addr',         s.companyAddr||'台北市內湖區瑞光路26巷20弄28號5樓');
-  set('pod-print-tel',          s.companyTel||'02-27933368');
-  set('pod-print-fax',          s.companyFax||'02-27932668');
-  set('pod-print-note',         draft.note||'');
   updatePODPreview(draft);
-  (function(){ var el=document.getElementById('modal-print-pod'); if(el) el.classList.add('open'); })();
+  // 顯示列印 modal
+  var modal = document.getElementById('modal-print-pod');
+  if (modal) modal.classList.add('open');
 }
 
 function updatePODPreview(draft) {
-  const preview = document.getElementById('pod-print-preview');
+  var preview = document.getElementById('pod-print-preview');
   if (!preview) return;
-  const s = getSettings();
-  const companyName = (document.getElementById('pod-print-company-name')||{}).value || s.companyName;
-  const taxId       = (document.getElementById('pod-print-taxid')||{}).value || s.companyTaxId;
-  const addr        = (document.getElementById('pod-print-addr')||{}).value || s.companyAddr;
-  const tel         = (document.getElementById('pod-print-tel')||{}).value || s.companyTel;
-  const fax         = (document.getElementById('pod-print-fax')||{}).value || s.companyFax;
-  const items       = draft.items || [];
-  const totalQty    = items.reduce(function(s,i){ return s+(parseFloat(i.qty)||0); }, 0);
-  const totalAmt    = items.reduce(function(s,i){ return s+(parseFloat(i.subtotal)||parseFloat(i.qty||0)*parseFloat(i.price||0)); }, 0);
+  var items = draft.items || [];
+  var totalQty = items.reduce(function(s,i){ return s+(i.qty||0); }, 0);
+  var totalAmt = items.reduce(function(s,i){ return s+(i.amount||i.qty*i.price||0); }, 0);
 
-  var rows = items.map(function(item, i) {
-    return '<tr style="border-bottom:1px solid #ddd">'
-      + '<td style="padding:5px 8px;text-align:center">'+(i+1)+'</td>'
-      + '<td style="padding:5px 8px">'+(item.supCode||'')+'</td>'
-      + '<td style="padding:5px 8px">'+(item.supName||'')+'</td>'
-      + '<td style="padding:5px 8px">'+(item.productCode||'')+'</td>'
-      + '<td style="padding:5px 8px">'+(item.productName||item.name||'')+'</td>'
-      + '<td style="padding:5px 8px;text-align:center">'+(item.unit||'')+'</td>'
-      + '<td style="padding:5px 8px;text-align:right">'+(parseFloat(item.qty||0).toLocaleString())+'</td>'
-      + '<td style="padding:5px 8px;text-align:right">'+(parseFloat(item.price||0).toLocaleString())+'</td>'
-      + '<td style="padding:5px 8px;text-align:right">'+(parseFloat(item.subtotal||0||item.qty*item.price||0).toLocaleString())+'</td>'
-      + '<td style="padding:5px 8px;text-align:center">'+(item.eta||'')+'</td>'
-      + '<td style="padding:5px 8px;text-align:center">'+(item.gift?'✓':'')+'</td>'
+  var itemRows = items.map(function(item, idx2) {
+    var amt = item.amount || ((item.qty||0)*(item.price||0));
+    return '<tr>'
+      + '<td style="text-align:center">'+(idx2+1)+'</td>'
+      + '<td style="text-align:center">'+(item.supplierCode||'')+'</td>'
+      + '<td>'+(item.supplierName||item.supShort||'')+'</td>'
+      + '<td style="font-family:monospace">'+(item.productCode||item.code||'')+'</td>'
+      + '<td>'+(item.productName||item.name||'')+'</td>'
+      + '<td style="text-align:center">'+(item.unit||'')+'</td>'
+      + '<td style="text-align:center">'+(item.currency||'TWD')+'</td>'
+      + '<td style="text-align:right">'+(item.qty||0)+'</td>'
+      + '<td style="text-align:right">'+(item.price?Number(item.price).toLocaleString():'')+'</td>'
+      + '<td style="text-align:right">'+(amt?Number(amt).toLocaleString():'')+'</td>'
+      + '<td style="text-align:center">'+(item.eta||'')+'</td>'
       + '</tr>';
   }).join('');
 
-  preview.innerHTML = '<div style="padding:24px;font-family:Arial,sans-serif;font-size:13px;color:#000">'
-    // Header
-    + '<div style="text-align:center;margin-bottom:16px">'
-    +   '<div style="font-size:20px;font-weight:700;letter-spacing:2px">'+companyName+'</div>'
-    +   '<div style="font-size:12px;color:#555;margin-top:4px">統編：'+taxId+' ｜ '+addr+'</div>'
-    +   '<div style="font-size:12px;color:#555">電話：'+tel+' ｜ 傳真：'+fax+'</div>'
-    +   '<div style="font-size:16px;font-weight:700;margin-top:12px;letter-spacing:4px;border-top:2px solid #000;border-bottom:2px solid #000;padding:6px 0">採 購 底 稿</div>'
+  preview.innerHTML = ''
+    + '<div style="font-family:標楷體,KaiTi,serif;font-size:13px;color:#000;padding:10px">'
+
+    // 公司抬頭
+    + '<div style="text-align:center;margin-bottom:6px">'
+    +   '<div style="font-size:18px;font-weight:bold;letter-spacing:2px">瀚騰科技(股)公司</div>'
+    +   '<div style="font-size:15px;font-weight:bold;margin-top:2px">採購底稿明細表</div>'
     + '</div>'
-    // Info grid
-    + '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;font-size:12px">'
-    +   '<div><b>底稿單號：</b>'+draft.code+'</div>'
-    +   '<div><b>日　　期：</b>'+draft.date+'</div>'
-    +   '<div><b>性　　質：</b>'+(draft.nature||'一般')+'</div>'
-    +   '<div><b>請 購 人：</b>'+draft.buyer+'</div>'
-    +   '<div><b>部　　門：</b>'+(draft.dept||'')+'</div>'
-    +   '<div><b>專　　案：</b>'+(draft.project||'')+'</div>'
+
+    // 表頭資訊
+    + '<div style="display:flex;justify-content:space-between;margin-bottom:8px;border-top:2px solid #000;border-bottom:1px solid #000;padding:4px 0">'
+    +   '<div style="display:flex;gap:24px">'
+    +     '<span><b>單號：</b>'+(draft.code||'')+'</span>'
+    +     '<span><b>日期：</b>'+(draft.date||'')+'</span>'
+    +     '<span><b>請購人：</b>'+(draft.buyerName||draft.buyer||'')+'</span>'
+    +   '</div>'
+    +   '<div style="display:flex;gap:24px">'
+    +     '<span><b>部門：</b>'+(draft.dept||'')+'</span>'
+    +     '<span><b>專案：</b>'+(draft.project||'')+'</span>'
+    +   '</div>'
     + '</div>'
-    // Items table
-    + '<table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:12px">'
-    +   '<thead><tr style="background:#f0f0f0;border-bottom:2px solid #000">'
-    +     '<th style="padding:6px 8px;text-align:center;width:4%">序</th>'
-    +     '<th style="padding:6px 8px;width:7%">廠商代號</th>'
-    +     '<th style="padding:6px 8px;width:12%">廠商名稱</th>'
-    +     '<th style="padding:6px 8px;width:8%">品號</th>'
-    +     '<th style="padding:6px 8px;width:20%">品名</th>'
-    +     '<th style="padding:6px 8px;text-align:center;width:5%">單位</th>'
-    +     '<th style="padding:6px 8px;text-align:right;width:7%">數量</th>'
-    +     '<th style="padding:6px 8px;text-align:right;width:9%">單價</th>'
-    +     '<th style="padding:6px 8px;text-align:right;width:9%">金額</th>'
-    +     '<th style="padding:6px 8px;text-align:center;width:10%">預交日</th>'
-    +     '<th style="padding:6px 8px;text-align:center;width:4%">贈品</th>'
-    +   '</tr></thead>'
-    +   '<tbody>'+rows+'</tbody>'
-    +   '<tfoot><tr style="border-top:2px solid #000;background:#f9f9f9">'
-    +     '<td colspan="6" style="padding:6px 8px;font-weight:700">合　計</td>'
-    +     '<td style="padding:6px 8px;text-align:right;font-weight:700">'+totalQty.toLocaleString()+'</td>'
-    +     '<td></td>'
-    +     '<td style="padding:6px 8px;text-align:right;font-weight:700">'+totalAmt.toLocaleString()+'</td>'
-    +     '<td colspan="2"></td>'
-    +   '</tr></tfoot>'
+
+    // 品項表格
+    + '<table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:6px">'
+    + '<thead><tr style="background:#f0f0f0">'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:30px">序</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:55px">廠商</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:70px">廠商名稱</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:100px">品號</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px">品名</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:40px">單位</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:40px">幣別</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:50px">數量</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:70px">單價</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:80px">金額</th>'
+    +   '<th style="border:1px solid #999;padding:3px 4px;width:80px">預交日</th>'
+    + '</tr></thead>'
+    + '<tbody style="font-family:monospace">'
+    + itemRows
+    + '</tbody>'
     + '</table>'
-    // Note
-    + (draft.note ? '<div style="font-size:12px;margin-bottom:12px"><b>備註：</b>'+draft.note+'</div>' : '')
-    // Signatures
-    + '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:24px;font-size:12px">'
-    +   '<div style="border-top:1px solid #000;padding-top:4px;text-align:center">請購人</div>'
-    +   '<div style="border-top:1px solid #000;padding-top:4px;text-align:center">部門主管</div>'
-    +   '<div style="border-top:1px solid #000;padding-top:4px;text-align:center">採購主管</div>'
-    +   '<div style="border-top:1px solid #000;padding-top:4px;text-align:center">核准</div>'
+
+    // 合計列
+    + '<div style="display:flex;justify-content:flex-end;gap:40px;border-top:1px solid #000;padding-top:4px;margin-bottom:16px;font-weight:bold">'
+    +   '<span>數量合計：'+totalQty+'</span>'
+    +   '<span>金額合計：'+Number(totalAmt).toLocaleString()+'</span>'
     + '</div>'
+
+    // 簽核欄
+    + '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin-top:8px">'
+    +   '<div style="border:1px solid #999;padding:6px 10px;min-height:50px">'
+    +     '<div style="font-size:11px;margin-bottom:4px;font-weight:bold">單位主管</div>'
+    +   '</div>'
+    +   '<div style="border:1px solid #999;border-left:none;padding:6px 10px;min-height:50px">'
+    +     '<div style="font-size:11px;margin-bottom:4px;font-weight:bold">生管</div>'
+    +   '</div>'
+    +   '<div style="border:1px solid #999;border-left:none;padding:6px 10px;min-height:50px">'
+    +     '<div style="font-size:11px;margin-bottom:4px;font-weight:bold">採購</div>'
+    +   '</div>'
+    + '</div>'
+
     + '</div>';
 }
 
 function executePODPrint() {
-  const preview = document.getElementById('pod-print-preview');
+  var preview = document.getElementById('pod-print-preview');
   if (!preview) return;
-  const w = window.open('','_blank','width=900,height=700');
-  w.document.write('<html><head><title>採購底稿</title><style>body{margin:0;padding:0}@media print{body{margin:0}}<\/style><\/head><body>');
-  w.document.write(preview.innerHTML);
-  w.document.write('<\/body></html>');
-  w.document.close();
-  w.focus();
-  setTimeout(function(){ w.print(); }, 500);
+  var html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>採購底稿明細表</title>'
+    + '<style>'
+    + 'body{font-family:標楷體,KaiTi,serif;font-size:13px;color:#000;margin:0}'
+    + '@page{size:A4 landscape;margin:12mm 10mm}'
+    + 'table{width:100%;border-collapse:collapse}'
+    + 'th,td{border:1px solid #999;padding:3px 5px;font-size:12px}'
+    + 'thead tr{background:#eee}'
+    + '.no-print{display:none}'
+    + '@media print{.no-print{display:none!important}}'
+    + '</style></head><body>'
+    + preview.innerHTML
+    + '</body></html>';
+  var blob = new Blob([html], {type:'text/html;charset=utf-8'});
+  var url  = URL.createObjectURL(blob);
+  var a    = document.createElement('a');
+  a.href   = url;
+  a.target = '_blank';
+  a.click();
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 3000);
 }
 
 function showPODTrade() {
@@ -11326,16 +11365,42 @@ function newSO() {
   showToast('新銷貨單，請填寫後存檔');
 }
 
-function onSOSCustChange() {
-  const sel = document.getElementById('sos-cust');
-  const cust = DBExtra.customers.find(c => c.id===sel.value);
+function onSOSCustChange() { onSOSCustInput(); }
+function onSOSCustInput() {
+  var val = (document.getElementById('sos-cust')||{}).value||'';
+  val = val.trim().toUpperCase();
+  var custs = DBExtra.customers||[];
+  // 比對代號或名稱
+  var cust = custs.find(function(c){
+    return (c.code||'').toUpperCase() === val ||
+           (c.name||'').toUpperCase() === val ||
+           (c.shortname||'').toUpperCase() === val;
+  });
   if (!cust) return;
-  const set = (id,v) => { const el=document.getElementById(id); if(el&&v) el.value=v; };
-  set('sos-contact', cust.contact); set('sos-tel', cust.phone);
-  set('sos-addr', cust.address); set('sos-fax', cust.fax);
-  // auto-fill bill customer
-  const bc = document.getElementById('sos-bill-cust');
-  if (bc && !bc.value) bc.value = sel.value;
+  var set = function(id,v){ var el=document.getElementById(id); if(el&&v) el.value=v; };
+  set('sos-contact', cust.contact||'');
+  set('sos-tel',     cust.phone||'');
+  set('sos-mobile',  cust.contact_mobile||cust.owner_mobile||'');
+  set('sos-fax',     cust.fax||'');
+  set('sos-addr',    cust.delivery_addr||cust.biz_addr||'');
+  set('sos-bill-cust', cust.billing||cust.name||'');
+  set('sos-currency', cust.currency||'TWD');
+}
+function initSOSDataLists() {
+  var custs = DBExtra.customers||[];
+  var dl = document.getElementById('sos-cust-list');
+  if (dl) dl.innerHTML = custs.map(function(c){
+    return '<option value="'+(c.code||c.name||'')+'">'+( c.name||'')+'</option>';
+  }).join('');
+  var dl2 = document.getElementById('sos-bill-list');
+  if (dl2) dl2.innerHTML = custs.map(function(c){
+    return '<option value="'+(c.billing||c.name||'')+'"></option>';
+  }).join('');
+  var emps = DBExtra.employees||[];
+  var dl3 = document.getElementById('sos-salesman-list');
+  if (dl3) dl3.innerHTML = emps.map(function(e){
+    return '<option value="'+(e.name||'')+'"></option>';
+  }).join('');
 }
 
 function addSOSItem(data) {
@@ -14127,7 +14192,7 @@ function recalcAllDraftTakenQty() {
 // ===== INIT =====
 renderDashboard();
 </script>
-<div id="print-area"></div>
+<div id="print-area" style="display:none"></div>
 
 
-</div></div></div></div></body></html>
+</div></div></div></div></div></body></html>
